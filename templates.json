@@ -16,9 +16,13 @@
           "container": "/certs"
         },
         {
-            "container": "/var/run/docker.sock"
+            "container": "/var/run/docker.sock",
+            "bind": "/var/run/docker.sock"
         }
-      ]
+      ],
+      "network": "proxy",
+      "restart_policy": "unless-stopped",
+      "hostname": "traefik"
     }
     ]
 }
