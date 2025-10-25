@@ -10,7 +10,7 @@
       "platform": "linux",
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/traefik.png",
       "image": "traefik:v3.5.3",
-      "ports": ["80/tcp", "443/tcp", "8080/tcp"],
+      "ports": ["80:80/tcp", "443:443/tcp", "8080:8080/tcp"],
       "volumes": [
         {
           "container": "/certs"
