@@ -1,0 +1,21 @@
+{
+  "version": "3",
+  "templates": [
+    {
+      "id": 1,
+      "type": 1,
+      "title": "Treaefik",
+      "description": "Traefik Reverse Proxy and Load Balancer",
+      "categories": ["networking", "proxy"],
+      "platform": "linux",
+      "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/png/traefik.png",
+      "image": "traefik:v3.5.3",
+      "ports": ["80/tcp", "443/tcp", "8080/tcp"],
+      "volumes": [
+        {
+          "container": "/var/lib/registry"
+        }
+      ]
+    }
+    ]
+}
