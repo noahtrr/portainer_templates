@@ -13,7 +13,10 @@
       "ports": ["80/tcp", "443/tcp", "8080/tcp"],
       "volumes": [
         {
-          "container": "/var/lib/registry"
+          "container": "/certs"
+        },
+        {
+            "container": "/var/run/docker.sock"
         }
       ]
     }
