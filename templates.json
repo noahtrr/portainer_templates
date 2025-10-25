@@ -8,7 +8,7 @@
       "description": "Traefik Reverse Proxy and Load Balancer",
       "categories": ["networking", "proxy"],
       "platform": "linux",
-      "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/traefik.svg",
+      "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/traefik-light.webp",
       "image": "traefik:v3.5.3",
       "ports": ["80:80/tcp", "443:443/tcp", "8080:8080/tcp"],
       "volumes": [
@@ -23,6 +23,46 @@
       "network": "proxy",
       "restart_policy": "unless-stopped",
       "hostname": "traefik"
+    },
+    {
+      "id": 2,
+      "type": 1,
+      "title": "Pocket-ID",
+      "description": "OIDC Identity Provider for your applications",
+      "categories": ["security", "IDP"],
+      "platform": "linux",
+      "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/pocket-id-light.webp",
+      "image": "ghcr.io/pocket-id/pocket-id:v1",
+      "ports": ["1411:1411/tcp"],
+      "volumes": [
+        {
+          "container": "/app/data"
+        }
+      ],
+      "network": "proxy",
+      "restart_policy": "unless-stopped",
+      "hostname": "pocket-id",
+        "env": [
+    {
+      "name": "APP_URL",
+      "label": "Pocket ID Application URL"
+    },
+    {
+      "name": "TRUST_PROXY",
+      "label": "Trust Proxy",
+      "select": [
+        {
+          "text": "Yes",
+          "value": "true"
+        },
+        {
+          "text": "No",
+          "value": "false",
+          "default": true
+        }
+    ]
+    }
+  ]
     }
     ]
 }
