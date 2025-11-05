@@ -93,6 +93,13 @@
             "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_HTTPCHALLENGE_ENTRYPOINT",
             "default": "web"
           }
+        ],
+        "labels": [
+          {"name": "traefik.enable", "value": "true"},
+          {"name": "traefik.http.routers.traefik.rule", "value": "Host(`traefik.yourdomain.com`)"},
+          {"name": "traefik.http.services.traefik.loadbalancer.server.port", "value": "8080"},
+          {"name": "traefik.http.routers.traefik.entrypoints", "value": "websecure"},
+          {"name": "traefik.http.routers.traefik.tls.certresolver", "value": "lenc"}
         ]
     },
     {
