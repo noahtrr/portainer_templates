@@ -74,6 +74,10 @@
             "default": "true"
           },
           {
+            "name": "TRAEFIK_ENTRYPOINTS_WEBSECURE_HTTP_TLS",
+            "default": "true"
+          },
+          {
             "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_EMAIL",
             "default": "your@email.com"
           },
