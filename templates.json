@@ -44,6 +44,18 @@
           {
             "name": "TRAEFIK_ACCESSLOG",
             "default": "true"
+          },
+          {
+            "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_TO",
+            "default": "websecure"
+          },
+          {
+            "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_SCHEME",
+            "default": "https"
+          },
+          {
+            "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_PERMANENT",
+            "default": "https"
           }
         ]
     },
