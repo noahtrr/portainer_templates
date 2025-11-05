@@ -2,8 +2,8 @@
   "version": "3",
   "templates": [
     {
-      "id": "1",
-      "type": "1",
+      "id": 1,
+      "type": 1,
       "title": "Traefik",
       "description": "Traefik is a modern HTTP reverse proxy and load balancer that makes deploying services easy.",
       "image": "traefik:latest",
