@@ -138,7 +138,14 @@
           "value": "false",
           "default": true
         }
-    ]
+    ],
+    "labels": [
+          {"name": "traefik.enable", "value": "true"},
+          {"name": "traefik.http.routers.pocketid.rule", "value": "Host(`pocketid.yourdomain.com`)"},
+          {"name": "traefik.http.services.pocketid.loadbalancer.server.port", "value": "1411"},
+          {"name": "traefik.http.routers.pocketid.entrypoints", "value": "websecure"},
+          {"name": "traefik.http.routers.pocketid.tls.certresolver", "value": "lenc"}
+        ]
     }
   ]
     }
