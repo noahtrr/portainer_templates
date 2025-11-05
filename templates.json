@@ -30,6 +30,10 @@
             "default": "true"
           },
           {
+            "name": "TRAEFIK_API_DASHBOARD",
+            "default": "true"
+          },
+          {
             "name": "TRAEFIK_PROVIDERS_DOCKER",
             "default": "true"
           },
