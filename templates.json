@@ -12,8 +12,7 @@
       "env": [
         {
           "name": "TRAEFIK_API_DASHBOARD",
-          "default": "true",
-          "preset": true
+          "default": "true"
         }
       ],
       "network": "proxy",
