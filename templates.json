@@ -93,7 +93,7 @@
             "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_HTTPCHALLENGE_ENTRYPOINT",
             "default": "web"
           }
-        ],
+      ],
         "labels": [
           {"name": "traefik.enable", "value": "true"},
           {"name": "traefik.http.routers.traefik.rule", "value": "Host(`traefik.yourdomain.com`)"},
@@ -139,7 +139,7 @@
           "default": true
         }
     ],
-    "labels": [
+  "labels": [
           {"name": "traefik.enable", "value": "true"},
           {"name": "traefik.http.routers.pocketid.rule", "value": "Host(`pocketid.yourdomain.com`)"},
           {"name": "traefik.http.services.pocketid.loadbalancer.server.port", "value": "1411"},
