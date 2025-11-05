@@ -8,11 +8,19 @@
       "image": "traefik:latest",
       "name": "Traefik",
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/traefik.svg",
-      "env": [],
+      "env": [
+        {
+          "name": "TRAEFIK_API_DASHBOARD",
+          "default": "true",
+          "preset": "true"
+        }
+      ],
       "network": "proxy",
       "volumes": [],
-      "ports": [],
-      "labels": [],
+      "ports": ["8080:8080/tcp", "80:80/tcp", "443:443/tcp"],
+      "labels": [
+        { "name": "traefik.enable", "value": "true" }
+      ],
       "restart_policy": "unless-stopped",
       "hostname": "traefik",
       "platform": "linux",
