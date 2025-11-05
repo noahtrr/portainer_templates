@@ -34,6 +34,14 @@
             "default": "true"
           },
           {
+            "name": "TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT",
+            "default": "false"
+          },
+          {
+            "name": "TRAEFIK_PROVIDERS_DOCKER_NETWORK",
+            "default": "proxy"
+          },
+          {
             "name": "TRAEFIK_ENTRYPOINTS_WEB_ADDRESS",
             "default": ":80"
           },
@@ -43,6 +51,14 @@
           },
           {
             "name": "TRAEFIK_ACCESSLOG",
+            "default": "true"
+          },
+          {
+            "name": "TRAEFIK_LOG_LEVEL",
+            "default": "INFO"
+          },
+          {
+            "name": "TRAEFIK_METRICS_PROMETHEUS",
             "default": "true"
           },
           {
@@ -56,6 +72,22 @@
           {
             "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_PERMANENT",
             "default": "https"
+          },
+          {
+            "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_SCHEME",
+            "default": "https"
+          },
+          {
+            "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_EMAIL",
+            "default": "your@email.com"
+          },
+          {
+            "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_STORAGE",
+            "default": "/certs/acme.json"
+          },
+          {
+            "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_HTTPCHALLENGE_ENTRYPOINT",
+            "default": "web"
           }
         ]
     },
