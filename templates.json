@@ -16,91 +16,91 @@
           "container": "/certs"
         },
         {
-            "container": "/var/run/docker.sock",
-            "bind": "/var/run/docker.sock",
-            "readonly": true
+          "container": "/var/run/docker.sock",
+          "bind": "/var/run/docker.sock",
+          "readonly": true
         }
       ],
       "network": "proxy",
       "restart_policy": "unless-stopped",
       "hostname": "traefik",
       "env": [
-          {
-            "name": "TRAEFIK_API_INSECURE",
-            "default": "true"
-          },
-          {
-            "name": "TRAEFIK_API_DASHBOARD",
-            "default": "true"
-          },
-          {
-            "name": "TRAEFIK_PROVIDERS_DOCKER",
-            "default": "true"
-          },
-          {
-            "name": "TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT",
-            "default": "false"
-          },
-          {
-            "name": "TRAEFIK_PROVIDERS_DOCKER_NETWORK",
-            "default": "proxy"
-          },
-          {
-            "name": "TRAEFIK_ENTRYPOINTS_WEB_ADDRESS",
-            "default": ":80"
-          },
-          {
-            "name": "TRAEFIK_ENTRYPOINTS_WEBSECURE_ADDRESS",
-            "default": ":443"
-          },
-          {
-            "name": "TRAEFIK_ACCESSLOG",
-            "default": "true"
-          },
-          {
-            "name": "TRAEFIK_LOG_LEVEL",
-            "default": "INFO"
-          },
-          {
-            "name": "TRAEFIK_METRICS_PROMETHEUS",
-            "default": "true"
-          },
-          {
-            "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_TO",
-            "default": "websecure"
-          },
-          {
-            "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_SCHEME",
-            "default": "https"
-          },
-          {
-            "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_PERMANENT",
-            "default": "true"
-          },
-          {
-            "name": "TRAEFIK_ENTRYPOINTS_WEBSECURE_HTTP_TLS",
-            "default": "true"
-          },
-          {
-            "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_EMAIL",
-            "default": "your@email.com"
-          },
-          {
-            "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_STORAGE",
-            "default": "/certs/acme.json"
-          },
-          {
-            "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_HTTPCHALLENGE_ENTRYPOINT",
-            "default": "web"
-          }
+        {
+          "name": "TRAEFIK_API_INSECURE",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_API_DASHBOARD",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_PROVIDERS_DOCKER",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT",
+          "default": "false"
+        },
+        {
+          "name": "TRAEFIK_PROVIDERS_DOCKER_NETWORK",
+          "default": "proxy"
+        },
+        {
+          "name": "TRAEFIK_ENTRYPOINTS_WEB_ADDRESS",
+          "default": ":80"
+        },
+        {
+          "name": "TRAEFIK_ENTRYPOINTS_WEBSECURE_ADDRESS",
+          "default": ":443"
+        },
+        {
+          "name": "TRAEFIK_ACCESSLOG",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_LOG_LEVEL",
+          "default": "INFO"
+        },
+        {
+          "name": "TRAEFIK_METRICS_PROMETHEUS",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_TO",
+          "default": "websecure"
+        },
+        {
+          "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_SCHEME",
+          "default": "https"
+        },
+        {
+          "name": "TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_PERMANENT",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_ENTRYPOINTS_WEBSECURE_HTTP_TLS",
+          "default": "true"
+        },
+        {
+          "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_EMAIL",
+          "default": "your@email.com"
+        },
+        {
+          "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_STORAGE",
+          "default": "/certs/acme.json"
+        },
+        {
+          "name": "TRAEFIK_CERTIFICATESRESOLVERS_LENC_ACME_HTTPCHALLENGE_ENTRYPOINT",
+          "default": "web"
+        }
       ],
-        "labels": [
-          {"name": "traefik.enable", "value": "true"},
-          {"name": "traefik.http.routers.traefik.rule", "value": "Host(`traefik.yourdomain.com`)"},
-          {"name": "traefik.http.services.traefik.loadbalancer.server.port", "value": "8080"},
-          {"name": "traefik.http.routers.traefik.entrypoints", "value": "websecure"},
-          {"name": "traefik.http.routers.traefik.tls.certresolver", "value": "lenc"}
-        ]
+      "labels": [
+        {"name": "traefik.enable", "value": "true"},
+        {"name": "traefik.http.routers.traefik.rule", "value": "Host(`traefik.yourdomain.com`)"},
+        {"name": "traefik.http.services.traefik.loadbalancer.server.port", "value": "8080"},
+        {"name": "traefik.http.routers.traefik.entrypoints", "value": "websecure"},
+        {"name": "traefik.http.routers.traefik.tls.certresolver", "value": "lenc"}
+      ]
     },
     {
       "id": 2,
@@ -120,34 +120,34 @@
       "network": "proxy",
       "restart_policy": "unless-stopped",
       "hostname": "pocket-id",
-        "env": [
-    {
-      "name": "APP_URL",
-      "label": "Pocket ID Application URL"
-    },
-    {
-      "name": "TRUST_PROXY",
-      "label": "Trust Proxy",
-      "select": [
+      "env": [
         {
-          "text": "Yes",
-          "value": "true"
+          "name": "APP_URL",
+          "label": "Pocket ID Application URL"
         },
         {
-          "text": "No",
-          "value": "false",
-          "default": true
+          "name": "TRUST_PROXY",
+          "label": "Trust Proxy",
+          "select": [
+            {
+              "text": "Yes",
+              "value": "true"
+            },
+            {
+              "text": "No",
+              "value": "false",
+              "default": true
+            }
+          ]
         }
-    ],
-  "labels": [
-          {"name": "traefik.enable", "value": "true"},
-          {"name": "traefik.http.routers.pocketid.rule", "value": "Host(`pocketid.yourdomain.com`)"},
-          {"name": "traefik.http.services.pocketid.loadbalancer.server.port", "value": "1411"},
-          {"name": "traefik.http.routers.pocketid.entrypoints", "value": "websecure"},
-          {"name": "traefik.http.routers.pocketid.tls.certresolver", "value": "lenc"}
-        ]
+      ],
+      "labels": [
+        {"name": "traefik.enable", "value": "true"},
+        {"name": "traefik.http.routers.pocketid.rule", "value": "Host(`pocketid.yourdomain.com`)"},
+        {"name": "traefik.http.services.pocketid.loadbalancer.server.port", "value": "1411"},
+        {"name": "traefik.http.routers.pocketid.entrypoints", "value": "websecure"},
+        {"name": "traefik.http.routers.pocketid.tls.certresolver", "value": "lenc"}
+      ]
     }
   ]
-    }
-    ]
 }
