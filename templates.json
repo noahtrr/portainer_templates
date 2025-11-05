@@ -13,7 +13,7 @@
         {
           "name": "TRAEFIK_API_DASHBOARD",
           "default": "true",
-          "preset": "true"
+          "preset": true
         }
       ],
       "network": "proxy",
