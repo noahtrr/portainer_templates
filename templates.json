@@ -9,7 +9,7 @@
       "categories": ["networking", "proxy"],
       "platform": "linux",
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/traefik-light.svg",
-      "image": "traefik:v3.5.3",
+      "image": "traefik:latest",
       "ports": ["80:80/tcp", "443:443/tcp", "8080:8080/tcp"],
       "volumes": [
         {
@@ -17,12 +17,35 @@
         },
         {
             "container": "/var/run/docker.sock",
-            "bind": "/var/run/docker.sock"
+            "bind": "/var/run/docker.sock",
+            "readonly": true
         }
       ],
       "network": "proxy",
       "restart_policy": "unless-stopped",
-      "hostname": "traefik"
+      "hostname": "traefik",
+      "env": [
+          {
+            "name": "TRAEFIK_API_INSECURE",
+            "default": "true"
+          },
+          {
+            "name": "TRAEFIK_PROVIDERS_DOCKER",
+            "default": "true"
+          },
+          {
+            "name": "TRAEFIK_ENTRYPOINTS_WEB_ADDRESS",
+            "default": ":80"
+          },
+          {
+            "name": "TRAEFIK_ENTRYPOINTS_WEBSECURE_ADDRESS",
+            "default": ":443"
+          },
+          {
+            "name": "TRAEFIK_ACCESSLOG",
+            "default": "true"
+          }
+        ]
     },
     {
       "id": 2,
@@ -32,7 +55,7 @@
       "categories": ["security", "IDP"],
       "platform": "linux",
       "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/pocket-id-light.svg",
-      "image": "ghcr.io/pocket-id/pocket-id:v1",
+      "image": "ghcr.io/pocket-id/pocket-id:latest",
       "ports": ["1411:1411/tcp"],
       "volumes": [
         {
