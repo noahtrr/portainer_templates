@@ -19,6 +19,11 @@
       "volumes": [
         {
           "container": "/letsencrypt"
+        },
+        {
+          "container": "/var/run/docker.sock",
+          "bind": "/var/run/docker.sock",
+          "readonly": true
         }
       ],
       "ports": ["8080:8080/tcp", "80:80/tcp", "443:443/tcp"],
